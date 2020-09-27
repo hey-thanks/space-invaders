@@ -10,16 +10,25 @@ TEXT_COLOR = (255, 255, 255)
 SCORE_COORDS = (10, 10)
 FONT_SIZE = 32
 
+# Images/Sprites
+# Attribution: https://www.flaticon.com/authors/nhor-phai
+LOGO = 'img/spaceship_logo.png'
+# Attribution: https://www.flaticon.com/authors/smashicons
+SPACESHIP = 'img/spaceship.png'
+BULLET = 'img/bullet.png'
+# Attribution: https://www.flaticon.com/authors/payungkead
+ENEMY = 'img/enemy.png'
+
 # Initialize pygame
 pygame.display.init()
 pygame.font.init()
 
-# Create the scren
+# Create the screen
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 # Change Title and Icon
 pygame.display.set_caption('Space Invaders')
-icon = pygame.image.load('img/spaceship_logo.png')
+icon = pygame.image.load(LOGO)
 pygame.display.set_icon(icon)
 
 # Score
@@ -42,7 +51,7 @@ def has_collided(x1, x2, y1, y2, collision_zone):
 # Player
 class Player():
     def __init__(self):
-        self.img = pygame.image.load('img/spaceship_1.png')
+        self.img = pygame.image.load(SPACESHIP)
         self.x = 368
         self.y = 480
         self.delta_x = 0
@@ -62,7 +71,7 @@ class Player():
 # Enemy
 class Enemy():
     def __init__(self):
-        self.img = pygame.image.load('img/enemy_1.png')
+        self.img = pygame.image.load(ENEMY)
         self.x = random.randint(64, 700)
         self.y = random.randint(50, 150)
         self.delta_x = random.randint(2, 9) / 10.0
@@ -92,7 +101,7 @@ class Enemy():
 # Fire - The bullet is moving
 class Bullet():
     def __init__(self):
-        self.img = pygame.image.load('img/bullet_1.png')
+        self.img = pygame.image.load(BULLET)
         self.x = 0
         self.y = 480
         self.delta_y = 0.5
