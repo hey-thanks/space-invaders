@@ -9,7 +9,7 @@ This is a simple game created using Python and PyGame, inspired by the
 
 Lauch using `python main.py`.
 Move left/right using the arrow keys.
-Shoot using the spacebar.
+Shoot using the spacebar. 
 
 ## Attributions
 Icons/sprites by:
